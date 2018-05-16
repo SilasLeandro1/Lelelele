@@ -1,0 +1,18 @@
+<?php
+// Incluir aquivo de conexão
+include("conn.php");
+ 
+// Recebe a id enviada no método GET
+$id = $_GET['id'];
+ 
+// Seleciona a noticia que tem essa ID
+$sql = mysql_query("SELECT * FROM alimentos WHERE id = '".$id."'");
+ 
+// Pega os dados e armazena em uma variável
+$noticia = mysql_fetch_object($sql);
+ 
+// Exibe o conteúdo da notica
+echo $noticia->carboidrato;
+ 
+// Acentuação
+?>
